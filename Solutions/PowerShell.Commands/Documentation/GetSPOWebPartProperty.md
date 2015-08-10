@@ -1,16 +1,18 @@
 #Get-SPOWebPartProperty
-*Topic automatically generated on: 2015-04-29*
+*Topic automatically generated on: 2015-07-14*
 
 Returns a web part property
 ##Syntax
 ```powershell
-Get-SPOWebPartProperty -PageUrl <String> -Identity <GuidPipeBind> [-Web <WebPipeBind>]```
-&nbsp;
+Get-SPOWebPartProperty -PageUrl <String> -Identity <GuidPipeBind> [-Key <String>] [-Web <WebPipeBind>]
+```
+
 
 ##Parameters
 Parameter|Type|Required|Description
 ---------|----|--------|-----------
-Identity|GuidPipeBind|True|
-PageUrl|String|True|
-Web|WebPipeBind|False|The web to apply the command to. Omit this parameter to use the current web.
-<!-- Ref: B2FCCCD87D0577A941784EBDD65C7F16 -->
+|Identity|GuidPipeBind|True||
+|Key|String|False||
+|PageUrl|String|True||
+|Web|WebPipeBind|False|The web to apply the command to. Omit this parameter to use the current web.|
+<!-- Ref: CE476C20D4E1691A37E470D92A548641 -->

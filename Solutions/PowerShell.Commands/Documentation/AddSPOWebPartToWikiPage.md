@@ -1,24 +1,35 @@
 #Add-SPOWebPartToWikiPage
-*Topic automatically generated on: 2015-04-29*
+*Topic automatically generated on: 2015-07-20*
 
 Adds a webpart to a wiki page in a specified table row and column
 ##Syntax
 ```powershell
-Add-SPOWebPartToWikiPage -Xml <String> -PageUrl <String> -Row <Int32> -Column <Int32> [-AddSpace [<SwitchParameter>]] [-Web <WebPipeBind>]```
-&nbsp;
+Add-SPOWebPartToWikiPage -Path <String> -PageUrl <String> -Row <Int32> -Column <Int32> [-AddSpace [<SwitchParameter>]] [-Web <WebPipeBind>]
+```
+
 
 ```powershell
-Add-SPOWebPartToWikiPage -Path <String> -PageUrl <String> -Row <Int32> -Column <Int32> [-AddSpace [<SwitchParameter>]] [-Web <WebPipeBind>]```
-&nbsp;
+Add-SPOWebPartToWikiPage -Xml <String> -PageUrl <String> -Row <Int32> -Column <Int32> [-AddSpace [<SwitchParameter>]] [-Web <WebPipeBind>]
+```
+
 
 ##Parameters
 Parameter|Type|Required|Description
 ---------|----|--------|-----------
-AddSpace|SwitchParameter|False|
-Column|Int32|True|
-PageUrl|String|True|
-Path|String|True|
-Row|Int32|True|
-Web|WebPipeBind|False|The web to apply the command to. Omit this parameter to use the current web.
-Xml|String|True|
-<!-- Ref: C1629DA9DDF4B2974601ECF43A21039E -->
+|AddSpace|SwitchParameter|False||
+|Column|Int32|True||
+|PageUrl|String|True||
+|Path|String|True||
+|Row|Int32|True||
+|Web|WebPipeBind|False|The web to apply the command to. Omit this parameter to use the current web.|
+|Xml|String|True||
+##Examples
+
+###Example 1
+    PS:> Add-SPOWebPartToWikiPage -PageUrl "/sites/demo/sitepages/home.aspx" -Path "c:\myfiles\listview.webpart" -Row 1 -Column 1
+This will add the webpart as defined by the XML in the listview.webpart file to the specified page in the first row and the first column of the HTML table present on the page
+
+###Example 2
+    PS:> Add-SPOWebPartToWikiPage -PageUrl "/sites/demo/sitepages/home.aspx" -XML $webpart -Row 1 -Column 1
+This will add the webpart as defined by the XML in the $webpart variable to the specified page in the first row and the first column of the HTML table present on the page
+<!-- Ref: 6890C3D8E72AE1A5B1EE2F260ECBBD96 -->
